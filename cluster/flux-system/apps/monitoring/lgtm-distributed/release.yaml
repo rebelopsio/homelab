@@ -1,0 +1,15 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: lgtm-distributed
+  namespace: monitoring # Adjust namespace as needed
+spec:
+  interval: 5m
+  chart:
+    spec:
+      chart: lgtm-distributed
+      #version: "0.69.0"  # Specify your desired version or omit for latest
+      sourceRef:
+        kind: HelmRepository
+        name: grafana
+        namespace: flux-system
