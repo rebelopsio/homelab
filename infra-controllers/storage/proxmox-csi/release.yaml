@@ -37,10 +37,10 @@ spec:
         reclaimPolicy: Delete
         fstype: ext4
     extraVolumes:
-      - name: config
+      - name: proxmox-config
         secret:
           secretName: proxmox-csi-plugin
     extraVolumeMounts:
-      - name: config
+      - name: proxmox-config
         mountPath: /etc/proxmox/
         readOnly: true
