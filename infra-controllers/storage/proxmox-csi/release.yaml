@@ -1,0 +1,46 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: proxmox-csi
+  namespace: proxmox-csi
+spec:
+  interval: 5m
+  chart:
+    spec:
+      chart: proxmox-csi
+      version: ">=0.1.0"
+      sourceRef:
+        kind: HelmRepository
+        name: proxmox-csi
+        namespace: proxmox-csi
+  values:
+    controller:
+      replicas: 1
+      resources:
+        requests:
+          cpu: 10m
+          memory: 20Mi
+        limits:
+          cpu: 100m
+          memory: 100Mi
+    node:
+      resources:
+        requests:
+          cpu: 10m
+          memory: 20Mi
+        limits:
+          cpu: 100m
+          memory: 100Mi
+    storageClass:
+      - name: proxmox-data-ext4
+        storage: data
+        reclaimPolicy: Delete
+        fstype: ext4
+    extraVolumes:
+      - name: config
+        secret:
+          secretName: proxmox-csi-plugin
+    extraVolumeMounts:
+      - name: config
+        mountPath: /etc/proxmox/
+        readOnly: true
