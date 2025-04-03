@@ -33,6 +33,6 @@ spec:
           memory: 100Mi
     storageClass:
       - name: proxmox-data-ext4
-        storage: data
+        storage: vm_pool
         reclaimPolicy: Delete
         fstype: ext4
