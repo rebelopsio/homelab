@@ -1,6 +1,0 @@
-# infra-controllers/sops/kustomization.yaml
-apiVersion: kustomize.config.k8s.io/v1beta1
-kind: Kustomization
-namespace: flux-system
-resources:
-  - github.com/fluxcd/flux2/manifests/controllers/kustomize-controller?ref=main
