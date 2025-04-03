@@ -3,3 +3,6 @@ creation_rules:
   - path_regex: infra-controllers/storage/proxmox-csi/.*\.yaml
     encrypted_regex: ^(data|stringData)$
     age: age1jcyuy0zd86kz9c3wa5ft5q25lvgwwz7vql6jr88pq4e4h3upcuxq7mhy73
+  - path_regex: .*secret.*\.yaml
+    encrypted_regex: ^(data|stringData)$
+    age: age1jcyuy0zd86kz9c3wa5ft5q25lvgwwz7vql6jr88pq4e4h3upcuxq7mhy73
