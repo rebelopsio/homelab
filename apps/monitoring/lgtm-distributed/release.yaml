@@ -28,9 +28,9 @@ spec:
           email_attribute_path: "email"
           name_attribute_path: "name"
           login_attribute_path: "email"
-    securityContext:
-      seccompProfile:
-        type: RuntimeDefault
+      securityContext:
+        seccompProfile:
+          type: RuntimeDefault
     distributor:
       securityContext:
         seccompProfile:
