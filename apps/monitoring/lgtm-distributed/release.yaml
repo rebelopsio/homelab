@@ -19,8 +19,6 @@ spec:
        auth.generic_oauth:
          enabled: true
          name: "OIDC"
-         client_id: ""
-         client_secret: "" 
          scopes: "openid profile email"
          auth_url: "https://idp.emperor-anaconda.ts.net/oauth2/auth"
          token_url: "https://idp.emperor-anaconda.ts.net/oauth2/token"
