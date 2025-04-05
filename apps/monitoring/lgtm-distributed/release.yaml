@@ -13,3 +13,19 @@ spec:
         kind: HelmRepository
         name: grafana
         namespace: flux-system
+  values:
+  grafana.ini:
+  auth.generic_oauth:
+    enabled: true
+    name: "OIDC"
+    client_id: ""
+    client_secret: "" 
+    scopes: "openid profile email"
+    auth_url: "https://idp.emperor-anaconda.ts.net/oauth2/auth"
+    token_url: "https://idp.emperor-anaconda.ts.net/oauth2/token"
+    api_url: "https://idp.emperor-anaconda.ts.net/"
+    allow_sign_up: true
+    role_attribute_path: "contains(groups[*], 'admin') && 'Admin' || contains(groups[*], 'editor') && 'Editor' || 'Viewer'"
+    email_attribute_path: "email"
+    name_attribute_path: "name"
+    login_attribute_path: "email"
