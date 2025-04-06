@@ -28,30 +28,27 @@ spec:
           email_attribute_path: "email"
           name_attribute_path: "name"
           login_attribute_path: "email"
-      securityContext:
-        seccompProfile:
-          type: RuntimeDefault
     distributor:
-      securityContext:
+      containerSecurityContext:
         seccompProfile:
           type: RuntimeDefault
     nginx:
-      securityContext:
+      containerSecurityContext:
         seccompProfile:
           type: RuntimeDefault
     queryFrontend:
-      securityContext:
+      containerSecurityContext:
         seccompProfile:
           type: RuntimeDefault
     compactor:
-      securityContext:
+      containerSecurityContext:
         seccompProfile:
           type: RuntimeDefault
     querier:
-      securityContext:
+      containerSecurityContext:
         seccompProfile:
           type: RuntimeDefault
     ingester:
-      securityContext:
+      containerSecurityContext:
         seccompProfile:
           type: RuntimeDefault
