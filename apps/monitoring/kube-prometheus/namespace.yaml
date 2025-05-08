@@ -5,3 +5,5 @@ metadata:
   labels:
     app.kubernetes.io/part-of: observability
     toolkit.fluxcd.io/tenant: observability
+    pod-security.kubernetes.io/enforce: privileged
+
